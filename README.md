@@ -27,9 +27,21 @@ rails g model contact first_name last_name email phone zip:integer --no-test-fra
 rails g model user first_name last_name email phone zip:integer --no-test-framework
 rails g model iou balance:float name memo status due_date:date --no-test-framework
 
-rails g migration AddUserToContacts user:belongs_to --no-test-framework     (a contact)
-rails g migration AddIouToContacts iou:belongs_to --no-test-framework      (iou belongs to a user)
-rails g migration contact:belongs_to
+rails g migration AddUserToContacts user:belongs_to --no-test-framework
+rails g migration AddUserToIous user:belongs_to --no-test-framework
+rails g migration AddContactToIous contact:belongs_to --no-test-framework
 
+class Contact < ActiveRecord::Base
+  has_many :ious
+  belongs_to :user
+end
 
-user has_many: contacts
+class Iou < ActiveRecord::Base
+  belongs_to :user
+  belongs_to :contact
+end
+
+class User < ActiveRecord::Base
+  has_many :ious
+  has_many :contacts
+end

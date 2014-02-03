@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: contacts
+# Table name: users
 #
 #  id         :integer          not null, primary key
 #  first_name :string(255)
@@ -12,7 +12,7 @@
 #  updated_at :datetime
 #
 
-class Contact < ActiveRecord::Base
+class User < ActiveRecord::Base
   has_many :ious
-  belongs_to :user
+  has_many :contacts
 end
