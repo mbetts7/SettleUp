@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-DebtsWithFriends::Application.load_tasks
+SettleUp::Application.load_tasks

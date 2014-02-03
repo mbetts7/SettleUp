@@ -48,5 +48,6 @@ class User < ActiveRecord::Base
 end
 
 CHANGING PROJECT NAME:
-http://gkunwar1.wordpress.com/2012/07/03/rails-tips/
+http://stackoverflow.com/questions/20988813/how-to-rename-rails-4-app
+http://stackoverflow.com/questions/14107208/sublime-text-2-find-and-replace-globally-all-files-and-in-all-directories
 
