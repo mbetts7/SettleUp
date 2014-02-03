@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140203191348) do
+ActiveRecord::Schema.define(version: 20140203193522) do
 
   create_table "contacts", force: true do |t|
     t.string   "first_name"
@@ -21,7 +21,10 @@ ActiveRecord::Schema.define(version: 20140203191348) do
     t.integer  "zip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
+
+  add_index "contacts", ["user_id"], name: "index_contacts_on_user_id"
 
   create_table "ious", force: true do |t|
     t.float    "balance"
@@ -31,7 +34,12 @@ ActiveRecord::Schema.define(version: 20140203191348) do
     t.date     "due_date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
+    t.integer  "contact_id"
   end
+
+  add_index "ious", ["contact_id"], name: "index_ious_on_contact_id"
+  add_index "ious", ["user_id"], name: "index_ious_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "first_name"

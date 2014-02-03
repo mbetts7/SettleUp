@@ -10,6 +10,8 @@
 #  due_date   :date
 #  created_at :datetime
 #  updated_at :datetime
+#  user_id    :integer
+#  contact_id :integer
 #
 
 class Iou < ActiveRecord::Base
