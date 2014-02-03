@@ -1,7 +1,9 @@
 Week 1 roadmap:
 - set up models
-- sorting date/amnt paid/
+- seed data
+- basic pages and links
 - I owe $ / Due to me $
+- sorting date/amnt paid/
 - Dropdown from contacts
 - emailing
 - stripe integration
