@@ -1,8 +1,10 @@
 class IousController < ApplicationController
-  before_filter :authenticate_user!, except: [:show]
+  before_filter :authenticate_user!, except: [:index, :show]
 
   def index
-    @ious = Iou.all
+    # user = User.find_by_id(:user.id)
+    @ious = current_user.ious
+    # @ious = Iou.all
   end
 
   def new
