@@ -12,6 +12,7 @@
 #  updated_at :datetime
 #  user_id    :integer
 #  contact_id :integer
+#  rec_pay    :string(255)
 #
 
 class Iou < ActiveRecord::Base

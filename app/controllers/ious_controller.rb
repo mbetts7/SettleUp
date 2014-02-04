@@ -12,6 +12,7 @@ class IousController < ApplicationController
   def create
     new_iou = params.require(:iou).permit(:balance, :name, :memo, :status, :due_date)
     @iou = Iou.create(new_iou)
+    
     render :show
   end
 
