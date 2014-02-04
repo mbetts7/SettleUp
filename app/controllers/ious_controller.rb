@@ -1,4 +1,5 @@
 class IousController < ApplicationController
+  before_filter :authenticate_user!, except: [:show]
 
   def index
     @ious = Iou.all

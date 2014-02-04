@@ -1,3 +1,9 @@
 <h1>These are your IOUs</h1>
 
-<%= @ious %>
+<% @ious.each do |all| %>
+  
+    <%= all.name %><br>
+    <%= all.memo %><br>
+    <%= button_to "Delete IOU", "/ious/#{all.id}", method: :delete %><br>
+
+<% end %>
