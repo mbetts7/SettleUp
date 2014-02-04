@@ -32,8 +32,10 @@ group :development do
   gem 'quiet_assets'
 end
 
+gem 'devise'
+
 # Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
