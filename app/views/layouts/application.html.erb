@@ -23,15 +23,16 @@
 
   <body>
   
-  <section>
-    <%= render 'layouts/header' %>
-  </section>
+    <section>
+      <%= render 'layouts/header' %>
+    </section>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>  
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>  
 
     <%= yield %>
 
     <%= javascript_include_tag "application" %>
+
   </body>
 </html>

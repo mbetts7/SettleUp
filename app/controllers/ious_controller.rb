@@ -1,6 +1,7 @@
 class IousController < ApplicationController
 
   def index
+    @ious = Iou.all
   end
 
   def new

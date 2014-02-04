@@ -3,17 +3,16 @@
     <ul class="title-area">
       <li class="name">
         
-        <h1><a href="/users">SettleUp</a></h1>
+        <h1><a href="#">SettleUp</a></h1>
       </li>
-      <li class="toggle-topbar menu-icon" style="color: white">Options</li>
+      <li class="toggle-topbar menu-icon"><a href="#">Options</a></li>
     </ul>
 
     <section class="top-bar-section">
-      
       <!-- Left Nav Section -->
       <ul class="left">
         <li class="has-dropdown">
-          <a href="/users">My Acount</a>
+          <a href="#">My Acount</a>
           <ul class="dropdown">
         <% if user_signed_in? %>
           <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
@@ -43,11 +42,10 @@
           </ul>
         </li>
       </ul>
-
     </section>
   </nav>
 
-<% if user_signed_in? %>
-<h5>Logged in as: <a href="/users"><%= current_user.email %></a></h5>
-<% end %>
+  <% if user_signed_in? %>
+    <h5>Logged in as: <a href="/users"><%= current_user.email %></a></h5>
+  <% end %>
 </div>
