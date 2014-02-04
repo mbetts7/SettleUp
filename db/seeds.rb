@@ -41,6 +41,7 @@
 #  updated_at :datetime
 
 users = []
+users << User.create(first_name: 'mike', last_name: 'betts', email: 'mbetts7@gmail.com', phone: '913-791-3741', zip: '94133', password: 'password', password_confirmation: 'password')
 users << User.create(first_name: 'Finn', last_name: 'Murray', email: 'FinnMurray@rhyta.com', phone: '678-791-3741', zip: '30303', password: 'password', password_confirmation: 'password')
 users << User.create(first_name: 'Ashton', last_name: 'Ride', email: 'AshtonRide@jourrapide.com', phone: '704-277-6191', zip: '28208', password: 'password', password_confirmation: 'password')
 users << User.create(first_name: 'Zac', last_name: 'Chave', email: 'ZacChave@rhyta.com', phone: '815-746-7215', zip: '60178', password: 'password', password_confirmation: 'password')
