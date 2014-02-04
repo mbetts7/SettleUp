@@ -3,6 +3,7 @@ class IousController < ApplicationController
 
   def index
     @ious = current_user.ious
+    # @ious = Iou.all
   end
 
   def new
@@ -12,7 +13,9 @@ class IousController < ApplicationController
   def create
     new_iou = params.require(:iou).permit(:balance, :name, :memo, :status, :due_date)
     @iou = Iou.create(new_iou)
-    
+    @iou.user_id = current_user.id
+    @iou.save
+
     render :show
   end
 

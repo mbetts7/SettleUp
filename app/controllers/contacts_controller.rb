@@ -2,6 +2,7 @@ class ContactsController < ApplicationController
   before_filter :authenticate_user!, except: [:index, :show]
   
   def index
+    @contacts = Contact.all
   end
 
   def new

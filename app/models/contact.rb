@@ -18,4 +18,5 @@
 class Contact < ActiveRecord::Base
   has_many :ious
   belongs_to :user
+  accepts_nested_attributes_for :ious
 end

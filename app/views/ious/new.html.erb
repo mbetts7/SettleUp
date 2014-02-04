@@ -1,18 +1,28 @@
 <%= form_for @iou do |f| %>
   <%= f.label "How much is owed?" %>
   <%= f.text_field :balance  %>
-  <br>
   <%= f.label :name %>
   <%= f.text_field :name  %>
-  <br>
   <%= f.label "Add some more details" %>
-  <%= f.text_field :memo  %>
-  <br>
+  <%= f.text_area :memo  %>
   <%= f.label "By default this IOU is open, mark it closed when it is paid" %>
   <%= f.text_field :status  %>
-  <br>
   <%= f.label "Due date" %>
   <%= f.text_field :due_date  %>
-  <br>
-  <%= f.submit "Create IOU" %>
+
+    <%= f.fields_for :contacts do |builder| %>
+    <%= builder.label "Create new contact" %>
+      <fieldset>
+        <%= builder.label "First name" %>
+        <%= builder.text_field :first_name %>
+        <%= builder.label "Last name" %>
+        <%= builder.text_field :last_name %>
+        <%= builder.label "Email" %>
+        <%= builder.text_field :email %>
+        <%= builder.label "Phone" %>
+        <%= builder.text_field :phone %>
+      </fieldset>
+    <% end %>
+
+  <%= f.submit "Create IOU" %>  
 <% end %>
