@@ -1,0 +1,8 @@
+<h1>Edit your profile</h1> <br>
+<h3>Your information:</h3><br>
+<%= form_for :user, url: "/" do |f| %>
+    <%= f.text_field :full_link, placeholder: @ %> 
+
+
+    <%= f.submit "Submit Changes" %>
+<% end %>
