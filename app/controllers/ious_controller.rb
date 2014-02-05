@@ -1,5 +1,5 @@
 class IousController < ApplicationController
-  before_filter :authenticate_user!, except: [:index, :show]
+  before_filter :authenticate_user!
 
   def index
     @ious = current_user.ious
@@ -41,5 +41,6 @@ class IousController < ApplicationController
     iou.delete
     redirect_to(ious_path)
   end
+
   
 end

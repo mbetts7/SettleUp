@@ -1,28 +1,22 @@
 
 
-<div class="small-6 columns">
+<div class="small-4 columns">
   <h2>Total Due to Me</h2>
+    <% @ious.each do |iou| %>
+      <%= iou.name %> <br>
+      <%= iou.balance %> <br>
+      <%= iou.rec_pay %> <br>
+  <% end %>
 </div>
-<div class="small-6 columns">
+
+<div class="small-4 columns">
   <h2>Total I Owe</h2>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-<% @users.each do |user| %>
-  <%= user.first_name %> <br>
-  <%= user.last_name %> <br>
-  <%= user.email %> <br>
-  <%= user.zip %>
+<div class="small-4 columns">
+  <h2>My Contacts</h2>
+  <% @contacts.each do |contact| %>
+    <%= contact.first_name %> <br>
+    <%= contact.email %> <br>
   <% end %>
-
-
-
+</div>

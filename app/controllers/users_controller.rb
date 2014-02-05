@@ -1,8 +1,11 @@
 class UsersController < ApplicationController
-  before_filter :authenticate_user!, except: [:index, :show]
+  before_filter :authenticate_user!
 
   def index
-    @users = User.all
+    # get_ious
+    # get_contacts
+    @ious = current_user.ious
+    @contacts = current_user.contacts
   end
 
   def new
@@ -24,4 +27,12 @@ class UsersController < ApplicationController
   def destory
   end
 
+  def get_ious
+    # @ious = current_user.ious
+  end
+
+  def get_contacts
+    # @contacts = current_user.contacts
+  end
+  
 end
