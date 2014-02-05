@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_filter :authenticate_user!
 
   def index
+    get_contacts
     @receivable_ious = current_user.ious.where(rec_pay: 'receivable')
     @payable_ious = current_user.ious.where(rec_pay: 'payable')
     @payable_balance = current_user.ious.where(rec_pay: 'payable').sum('balance')
@@ -30,8 +31,9 @@ class UsersController < ApplicationController
   #   @ious = current_user.ious
   # end
 
-  # def get_contacts
-  #   @contacts = current_user.contacts
-  # end
+  def get_contacts
+    @contacts = current_user.contacts
+    # @contacts.order('balance DESC')
+  end
   
 end

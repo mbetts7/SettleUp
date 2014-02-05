@@ -32,11 +32,11 @@ class User < ActiveRecord::Base
   has_many :contacts
 
 
-  def self.receivables_balance
-    receivables = @ious.find_by_rec_pay.where(rec_pay = "receivable")
-    receivables_balance = receivables.sum("balance")
-    return receivables_balance
-  end
+  # def self.receivables_balance
+  #   receivables = @ious.find_by_rec_pay.where(rec_pay = "receivable")
+  #   receivables_balance = receivables.sum("balance")
+  #   return receivables_balance
+  # end
 
 
 end
