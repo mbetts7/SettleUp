@@ -2,10 +2,10 @@ class UsersController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    # get_ious
-    # get_contacts
-    @ious = current_user.ious
-    @contacts = current_user.contacts
+    get_ious
+    get_contacts
+    @payable_balance = current_user.ious.where(rec_pay: 'payable').sum('balance')
+    @receivable_balance = current_user.ious.where(rec_pay: 'receivable').sum('balance')
   end
 
   def new
@@ -28,11 +28,11 @@ class UsersController < ApplicationController
   end
 
   def get_ious
-    # @ious = current_user.ious
+    @ious = current_user.ious
   end
 
   def get_contacts
-    # @contacts = current_user.contacts
+    @contacts = current_user.contacts
   end
   
 end

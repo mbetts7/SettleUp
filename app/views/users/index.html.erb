@@ -1,16 +1,27 @@
 
 
 <div class="small-4 columns">
-  <h2>Total Due to Me</h2>
+  <h2>Total Due to Me: </h2>
+  <h3>$<%= @receivable_balance %></h3>
+
     <% @ious.each do |iou| %>
       <%= iou.name %> <br>
       <%= iou.balance %> <br>
       <%= iou.rec_pay %> <br>
-  <% end %>
+    <% end %>
+  
 </div>
 
 <div class="small-4 columns">
-  <h2>Total I Owe</h2>
+  <h2>Total I Owe: </h2>
+  <h3>$<%= @payable_balance %></h3>
+
+    <% @ious.each do |iou| %>
+      <%= iou.name %> <br>
+      <%= iou.balance %> <br>
+      <%= iou.rec_pay %> <br>
+    <% end %>
+
 </div>
 
 <div class="small-4 columns">
