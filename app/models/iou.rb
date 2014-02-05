@@ -19,7 +19,6 @@ class Iou < ActiveRecord::Base
   belongs_to :user
   belongs_to :contact
   accepts_nested_attributes_for :contact
-  accepts_nested_attributes_for :user
 
   # after_create :add_balance_to_user
 

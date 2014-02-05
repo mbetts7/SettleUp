@@ -1,45 +1,5 @@
 #http://www.fakenamegenerator.com/gen-male-au-us.php
 
-# Table name: contacts
-#
-#  id         :integer          not null, primary key
-#  first_name :string(255)
-#  last_name  :string(255)
-#  email      :string(255)
-#  phone      :string(255)
-#  zip        :integer
-#  created_at :datetime
-#  updated_at :datetime
-#  user_id    :integer
-
-# == Schema Information
-#
-# Table name: ious
-#
-#  id         :integer          not null, primary key
-#  balance    :float
-#  name       :string(255)
-#  memo       :string(255)
-#  status     :string(255)
-#  due_date   :date
-#  created_at :datetime
-#  updated_at :datetime
-#  user_id    :integer
-#  contact_id :integer
-
-# == Schema Information
-#
-# Table name: users
-#
-#  id         :integer          not null, primary key
-#  first_name :string(255)
-#  last_name  :string(255)
-#  email      :string(255)
-#  phone      :string(255)
-#  zip        :integer
-#  created_at :datetime
-#  updated_at :datetime
-
 users = []
 users << User.create(first_name: 'mike', last_name: 'betts', email: 'mbetts7@gmail.com', phone: '913-791-3741', zip: '94133', password: 'password', password_confirmation: 'password')
 users << User.create(first_name: 'Finn', last_name: 'Murray', email: 'FinnMurray@rhyta.com', phone: '678-791-3741', zip: '30303', password: 'password', password_confirmation: 'password')
@@ -59,17 +19,17 @@ contacts << Contact.create(first_name: 'Daniel', last_name: 'Cowley', email: 'Da
 contacts << Contact.create(first_name: 'Taj', last_name: 'Manton', email: 'TajManton@armyspy.com', phone: '770-571-9026', zip: '30071')
 
 ious = []
-ious << Iou.create(balance: 1300.49, name: 'chump change', memo: 'why you steal my lunch money', status: 'open', due_date: '10/19/2014')
-ious << Iou.create(balance: 36619.35, name: 'Bottle Tonx', memo: 'meggings sustainable, polaroid me', status: 'open', due_date: '9/9/2014')
-ious << Iou.create(balance: 578.46, name: ' actually. Ho', memo: 'ur-over lo-fi. Shoreditch fanny pack typewrite', status: 'open', due_date: '8/7/2014')
-ious << Iou.create(balance: 4402.99, name: 'odard mumblecore church-ke', memo: 'op-up, blog VHS YOLO disrupt. Selvage drinking vinegar ', status: 'open', due_date: '1/9/2014')
-ious << Iou.create(balance: 2162.94, name: 'farm-to-table beard', memo: 'squid gluten-free deep v bitters quinoa', status: 'open', due_date: '3/13/2014')
-ious << Iou.create(balance: 4222.90, name: 'Sriracha', memo: 'a bird on it pug bicycle rights whatever scenester', status: 'open', due_date: '3/30/2014')
-ious << Iou.create(balance: 1859.07, name: 'XOXO', memo: 'squid gluten-free deep v bitters quinoa', status: 'open', due_date: '4/9/2014')
-ious << Iou.create(balance: 9872.52, name: 'Bottle Odd Future', memo: ' Godard mumblecore church-key fashion axe hella bitters', status: 'open', due_date: '3/15/2014')
-ious << Iou.create(balance: 40942.47, name: 'Vegan gastropub aesthetic,', memo: 'freegan leggings raw denim Echo Park', status: 'open', due_date: '5/24/2014')
-ious << Iou.create(balance: 347.73, name: 'Carles gentrify chia', memo: 'PBR&B dreamcatcher vinyl actually cardigan. PBR&B', status: 'open', due_date: '7/31/2014')
-ious << Iou.create(balance: 15.67, name: ' freegan next level ', memo: 'Mixtape cliche American Apparel Tonx chambray, asymmetrical', status: 'open', due_date: '5/19/2014')
+ious << Iou.create(balance: 1300.49, name: 'chump change', memo: 'why you steal my lunch money', status: 'open', due_date: '10/19/2014', rec_pay: 'receivable')
+ious << Iou.create(balance: 36619.35, name: 'Bottle Tonx', memo: 'meggings sustainable, polaroid me', status: 'open', due_date: '9/9/2014', rec_pay: 'receivable')
+ious << Iou.create(balance: 578.46, name: ' actually. Ho', memo: 'ur-over lo-fi. Shoreditch fanny pack typewrite', status: 'open', due_date: '8/7/2014', rec_pay: 'receivable')
+ious << Iou.create(balance: 4402.99, name: 'odard mumblecore church-ke', memo: 'op-up, blog VHS YOLO disrupt. Selvage drinking vinegar ', status: 'open', due_date: '1/9/2014', rec_pay: 'receivable')
+ious << Iou.create(balance: 2162.94, name: 'farm-to-table beard', memo: 'squid gluten-free deep v bitters quinoa', status: 'open', due_date: '3/13/2014', rec_pay: 'receivable')
+ious << Iou.create(balance: 4222.90, name: 'Sriracha', memo: 'a bird on it pug bicycle rights whatever scenester', status: 'open', due_date: '3/30/2014', rec_pay: 'receivable')
+ious << Iou.create(balance: 1859.07, name: 'XOXO', memo: 'squid gluten-free deep v bitters quinoa', status: 'open', due_date: '4/9/2014', rec_pay: 'receivable')
+ious << Iou.create(balance: 9872.52, name: 'Bottle Odd Future', memo: ' Godard mumblecore church-key fashion axe hella bitters', status: 'open', due_date: '3/15/2014', rec_pay: 'receivable')
+ious << Iou.create(balance: 40942.47, name: 'Vegan gastropub aesthetic,', memo: 'freegan leggings raw denim Echo Park', status: 'open', due_date: '5/24/2014', rec_pay: 'receivable')
+ious << Iou.create(balance: 347.73, name: 'Carles gentrify chia', memo: 'PBR&B dreamcatcher vinyl actually cardigan. PBR&B', status: 'open', due_date: '7/31/2014', rec_pay: 'receivable')
+ious << Iou.create(balance: 15.67, name: ' freegan next level ', memo: 'Mixtape cliche American Apparel Tonx chambray, asymmetrical', status: 'open', due_date: '5/19/2014', rec_pay: 'receivable')
 
 users[0].contacts << contacts[-1]
 users[0].contacts << contacts[-2]
