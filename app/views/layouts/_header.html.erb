@@ -26,6 +26,7 @@
       </ul>
 
       <!-- Right Nav Section -->
+    <% if user_signed_in? %>
       <ul class="right">
         <li class="has-dropdown">
           <a href="/contacts">Contacts</a>
@@ -42,6 +43,7 @@
           </ul>
         </li>
       </ul>
+    <% end %>
     </section>
   </nav>
 
