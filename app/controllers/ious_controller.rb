@@ -19,8 +19,6 @@ class IousController < ApplicationController
     @iou.user_id = current_user.id
     @iou.save
 
-
-
     render :show
   end
 
