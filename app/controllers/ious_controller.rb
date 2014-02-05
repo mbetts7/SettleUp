@@ -8,11 +8,14 @@ class IousController < ApplicationController
 
   def new
     @iou = Iou.new
+    @iou.build_contact
   end
 
   def create
-    new_iou = params.require(:iou).permit(:balance, :name, :memo, :status, :due_date)
-    @iou = Iou.create(new_iou)
+    params.inspect
+    new_iou = params.require(:iou).permit(:balance, :name, :memo, :status, :due_date, :rec_pay,
+        :contact_attributes => [:first_name, :last_name, :email, :phone])
+    @iou = Iou.new(new_iou)
     @iou.user_id = current_user.id
     @iou.save
 

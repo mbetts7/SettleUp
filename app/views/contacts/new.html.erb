@@ -1,0 +1,14 @@
+<%= form_for @contact do |f| %>
+  <%= f.label "First Name" %>
+  <%= f.text_field :first_name  %>
+  <%= f.label "Last Name" %>
+  <%= f.text_field :last_name  %>
+  <%= f.label "Email Addresss" %>
+  <%= f.text_field :email  %>
+  <%= f.label "Phone number" %>
+  <%= f.text_field :phone  %>
+  <%= f.label "Zip code" %>
+  <%= f.text_field :zip  %>
+
+  <%= f.submit "Create IOU" %>  
+<% end %>
