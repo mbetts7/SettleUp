@@ -1,55 +1,11 @@
-
-
 <div class="small-6 columns">
   <h2>Total Due to Me: </h2>
   <h3><%= number_to_currency(@receivable_balance) %></h3>
-    <table>
-      <thead>
-        <tr>
-          <th width="175">Owed To</th>
-          <th width="300">Name of IOU</th>
-          <th width="100">Amount</th>
-          <th width="50">Paid?</th>
-        </tr>
-      </thead>
-      <tbody>  
-        <% @receivable_ious.each do |iou| %>
-        <tr>
-            <td><%= iou.contact.first_name + " " +   iou.contact.last_name %> </td>
-            <td><%= iou.name %> </td>
-            <td><%= number_to_currency(iou.balance) %> </td>
-            <td><%= iou.status %> </td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+    <%= render 'receivable_table' %>
 </div>
 
 <div class="small-6 columns">
 <h2>Total I Owe: </h2>
   <h3><%= number_to_currency(@payable_balance) %></h3>
-    <table>
-      <thead>
-        <tr>
-          <th width="175">Owed To</th>
-          <th width="300">Name of IOU</th>
-          <th width="100">Amount</th>
-          <th width="50">Paid?</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @payable_ious.each do |iou| %>
-        <tr>
-            <td><%= iou.contact.first_name + " " +   iou.contact.last_name %> </td>
-            <td><%= iou.name %> </td>
-            <td><%= number_to_currency(iou.balance) %> </td>
-            <td><%= iou.status %> </td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-      </tbody>
-    </table>
+    <%= render 'payable_table' %>
 </div>
-
-

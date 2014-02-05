@@ -1,0 +1,24 @@
+<table>
+      <thead>
+        <tr>
+          <th width="175">Owed To</th>
+          <th width="300">Name of IOU</th>
+          <th width="100">Amount</th>
+          <th width="50">Paid?</th>
+          <th width="25">Go</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @payable_ious.each do |iou| %>
+        <tr>
+            <td><%= iou.contact.first_name + " " +   iou.contact.last_name %> </td>
+            <td><%= iou.name %> </td>
+            <td><%= number_to_currency(iou.balance) %> </td>
+            <td><%= iou.status %> </td>
+            <td><%= link_to "View", "/ious/#{iou.id}", method: :get %> </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+      </tbody>
+    </table>
