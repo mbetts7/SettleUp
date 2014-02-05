@@ -1,33 +1,55 @@
 
 
-<div class="small-4 columns">
+<div class="small-6 columns">
   <h2>Total Due to Me: </h2>
   <h3><%= number_to_currency(@receivable_balance) %></h3>
-
-    <% @receivable_ious.each do |iou| %>
-      <%= iou.name %> <br>
-      $<%= iou.balance %> <br>
-      <%= iou.rec_pay %> <br>
-    <% end %>
-  
+    <table>
+      <thead>
+        <tr>
+          <th width="175">Owed To</th>
+          <th width="300">Name of IOU</th>
+          <th width="100">Amount</th>
+          <th width="50">Paid?</th>
+        </tr>
+      </thead>
+      <tbody>  
+        <% @receivable_ious.each do |iou| %>
+        <tr>
+            <td><%= iou.contact.first_name + " " +   iou.contact.last_name %> </td>
+            <td><%= iou.name %> </td>
+            <td><%= number_to_currency(iou.balance) %> </td>
+            <td><%= iou.status %> </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 </div>
 
-<div class="small-4 columns">
-  <h2>Total I Owe: </h2>
+<div class="small-6 columns">
+<h2>Total I Owe: </h2>
   <h3><%= number_to_currency(@payable_balance) %></h3>
-
-    <% @payable_ious.each do |iou| %>
-      <%= iou.name %> <br>
-      <%= iou.balance %> <br>
-      <%= iou.rec_pay %> <br>
-    <% end %>
-
+    <table>
+      <thead>
+        <tr>
+          <th width="175">Owed To</th>
+          <th width="300">Name of IOU</th>
+          <th width="100">Amount</th>
+          <th width="50">Paid?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @payable_ious.each do |iou| %>
+        <tr>
+            <td><%= iou.contact.first_name + " " +   iou.contact.last_name %> </td>
+            <td><%= iou.name %> </td>
+            <td><%= number_to_currency(iou.balance) %> </td>
+            <td><%= iou.status %> </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+      </tbody>
+    </table>
 </div>
 
-<div class="small-4 columns">
-  <h2>My Contacts</h2>
-  <% @contacts.each do |contact| %>
-    <%= contact.first_name %> <br>
-    <%= contact.email %> <br>
-  <% end %>
-</div>
+
