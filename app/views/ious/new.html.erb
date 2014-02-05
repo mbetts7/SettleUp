@@ -3,8 +3,6 @@
   <%= f.text_field :balance  %>
   <%= f.label :name %>
   <%= f.text_field :name  %>
-  <%= f.label "Add some more details" %>
-  <%= f.text_area :memo  %>
   <%= f.label "By default this IOU is open, mark it closed when it is paid" %>
   <%= f.text_field :status  %>
   <%= f.label "Due date" %>
@@ -23,6 +21,7 @@
         <%= builder.text_field :email %>
         <%= builder.label "Phone" %>
         <%= builder.text_field :phone %>
+        <%= builder.hidden_field :user_id, :value => current_user.id %>
       </fieldset>
     <% end %>
 

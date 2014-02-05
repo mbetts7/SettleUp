@@ -12,14 +12,14 @@ class IousController < ApplicationController
   end
 
   def create
-    params.inspect
+    
     new_iou = params.require(:iou).permit(:balance, :name, :memo, :status, :due_date, :rec_pay,
-        :contact_attributes => [:first_name, :last_name, :email, :phone])
+        :contact_attributes => [:first_name, :last_name, :email, :phone, :user_id])
     @iou = Iou.new(new_iou)
     @iou.user_id = current_user.id
     @iou.save
 
-    
+
 
     render :show
   end

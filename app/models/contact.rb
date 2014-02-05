@@ -20,5 +20,13 @@ class Contact < ActiveRecord::Base
   belongs_to :user
   accepts_nested_attributes_for :ious
 
+  # after_create :save_user_id_to_contact
+
+  # def save_user_id_to_contact
+
+    # @contact.user_id = @current_user_id
+
+  # end
+
   # validates_format_of :phone, with: /\d{3}-\d{3}-\d{4}/, on: :create, message: "Phone number must be 10 digits formatted like 555-555-555"
 end
