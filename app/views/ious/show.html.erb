@@ -1,7 +1,30 @@
-<h1>You created this IOU</h1>
+<h1>This IOU</h1>
 
-  <%= @iou.name %> <br>
-  <%= @iou.balance %> <br>
-  <%= @iou.memo %> <br>
-  <%= @iou.status %> <br>
-
+<table>
+  <thead>
+    <tr>
+      <th width="175">Contact</th>
+      <th width="300">Name of IOU</th>
+      <th width="100">Amount</th>
+      <th width="50">Rec/Pay</th>
+      <th width="50">Paid?</th>
+    </tr>
+  </thead>
+    <tbody>
+      <tr>
+          <td><%= @iou.contact.first_name + " " +   @iou.contact.last_name %> </td>
+          <td><%= @iou.name %> </td>
+          <td><%= number_to_currency(@iou.balance) %> </td>
+          <td><%= @iou.rec_pay %> </td>
+          <td><%= @iou.status %> </td>
+        </tr>
+    </tbody>
+</table>  
+  
+  <% if @iou.status == "Unpaid" %>
+      <%= link_to "Mark paid", "/ious/#{@iou.id}", :status => "Paid", method: :patch, class: "button radius" %>
+    <% else %>
+      <%= link_to "Mark unpaid", "/ious/#{@iou.id}", method: :patch, class: "button radius" %>
+  <% end %>
+  <%= link_to "Delete IOU", ious_path, method: :delete, class: "button radius" %>
+  
