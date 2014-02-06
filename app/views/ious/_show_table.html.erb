@@ -1,0 +1,24 @@
+<table>
+  <thead>
+    <tr>
+      <th width="175">Contact</th>
+      <th width="300">Name of IOU</th>
+      <th width="100">Amount</th>
+      <th width="50">Rec/Pay</th>
+      <th width="100">Due date</th>
+      <th width="50">Paid?</th>
+      <th width="50">Edit</th>
+    </tr>
+  </thead>
+    <tbody>
+      <tr>
+          <td><%= @iou.contact.first_name + " " +   @iou.contact.last_name %> </td>
+          <td><%= @iou.name %> </td>
+          <td><%= number_to_currency(@iou.balance) %> </td>
+          <td><%= @iou.rec_pay %> </td>
+          <td><%= @iou.due_date %> </td>
+          <td><%= @iou.status %> </td>
+          <td><%= link_to "Edit", "/ious/#{@iou.id}/edit", method: :get %> </td>
+        </tr>
+    </tbody>
+</table>  
