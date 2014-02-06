@@ -1,15 +1,15 @@
 <%= form_for @contact do |f| %>
   <%= f.label "First Name" %>
-  <%= f.text_field :first_name  %>
+  <%= f.text_field :first_name %>
 
   <%= f.label "Last Name" %>
-  <%= f.text_field :last_name  %>
+  <%= f.text_field :last_name %>
 
   <%= f.label "Email Addresss" %>
-  <%= f.text_field :email  %>
+  <%= f.text_field :email %>
 
   <%= f.label "Phone number (optional)" %>
-  <%= f.text_field :phone  %>
+  <%= f.text_field :phone %>
 
-  <%= f.submit "Create Contact", class: "button radius" %>  
+  <%= f.submit class: "button radius" %>  
 <% end %>

@@ -29,7 +29,7 @@ class ContactsController < ApplicationController
 
   def update
     @contact = Contact.find(params[:id])
-    @contact.update_attributes(params[:contact])
+    @contact.update_attributes(require(:contact).permit(:first_name, :last_name, :email, :phone))
     render :show
   end
 
