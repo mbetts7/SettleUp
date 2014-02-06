@@ -13,7 +13,7 @@
     <tbody>
       <% @ious.each do |iou| %>
       <tr>
-          <td><%= iou.contact.first_name + " " +   iou.contact.last_name %> </td>
+          <td><%= iou.contact.first_name + " " + iou.contact.last_name %> </td>
           <td><%= iou.name %> </td>
           <td><%= number_to_currency(iou.balance) %> </td>
           <td><%= iou.rec_pay %> </td>
