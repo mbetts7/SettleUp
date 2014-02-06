@@ -32,17 +32,17 @@ class IousController < ApplicationController
 
   def update
     @iou = Iou.find(params[:id])
-    @iou.update_attributes(params[:iou])
-    render :show
+    @iou.update_attributes(params.require(:iou).permit(:balance, :name, :due_date, :status, :rec_pay))
+    redirect_to @iou
   end
 
   def status_change
     @iou = Iou.find(params[:id])
-    if @iou.status == "unpaid"
-      @iou.status = "paid"
-    else
-      @iou.status = "unpaid"
-    end
+      if @iou.status == "unpaid"
+        @iou.status = "paid"
+      else
+        @iou.status = "unpaid"
+      end
     @iou.save
     redirect_to @iou
   end

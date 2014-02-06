@@ -5,6 +5,7 @@
       <th width="300">Name of IOU</th>
       <th width="100">Amount</th>
       <th width="50">Rec/Pay</th>
+      <th width="100">Due date</th>
       <th width="50">Paid?</th>
       <th width="25">Go</th>
     </tr>
@@ -16,6 +17,7 @@
           <td><%= iou.name %> </td>
           <td><%= number_to_currency(iou.balance) %> </td>
           <td><%= iou.rec_pay %> </td>
+          <td><%= iou.due_date %> </td>
           <td><%= iou.status %> </td>
           <td><%= link_to "View", "/ious/#{iou.id}", method: :get %> </td>
         </tr>

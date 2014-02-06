@@ -11,7 +11,7 @@ SettleUp::Application.routes.draw do
 end
 
 
-#   Prefix Verb   URI Pattern                    Controller#Action
+#  Prefix Verb   URI Pattern                    Controller#Action
 #         new_user_session GET    /users/login(.:format)         devise/sessions#new
 #             user_session POST   /users/login(.:format)         devise/sessions#create
 #     destroy_user_session DELETE /users/logout(.:format)        devise/sessions#destroy
@@ -52,3 +52,4 @@ end
 #                          PATCH  /ious/:id(.:format)            ious#update
 #                          PUT    /ious/:id(.:format)            ious#update
 #                          DELETE /ious/:id(.:format)            ious#destroy
+#                          PATCH  /ious/:id/status(.:format)     ious#status_change
