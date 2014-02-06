@@ -9,6 +9,7 @@ class IousController < ApplicationController
   def new
     @iou = Iou.new
     @iou.build_contact
+    @contacts = current_user.contacts
   end
 
   def create

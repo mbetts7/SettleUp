@@ -3,6 +3,7 @@ class ContactsController < ApplicationController
   
   def index
     @contacts = current_user.contacts
+    # @receivable_ious = current_user.iouscontacts.where(rec_pay: 'receivable', user_id: current_user.id).sum('balance')
   end
 
   def new

@@ -1,6 +1,33 @@
+<div class="small-10 columns">
 <h1>These are your contacts</h1>
 
-<% @contacts.each do |all| %>
-  <%= all.first_name %><br>
+    <table>
+    <thead>
+      <tr>
+        <th width="175">Name</th>
+        <th width="175">Email</th>
+        <th width="50">Phone</th>
+        <th width="100">Owes you</th>
+        <th width="50">You owe them</th>
+        <th width="100">Net owed</th>
+        <th width="25">Go to contact</th>
+      </tr>
+    </thead>
+      <tbody>
+        <% @contacts.each do |contact| %>
+        <tr>
+            <td><%= contact.first_name + " " +   contact.last_name %> </td>
+            <td><%= contact.email %> </td>
+            <td><%= contact.phone %> </td>
+            <td> current_user C rec bal </td>
+            <td>current_user C pay bal %> </td>
+            <td>Net </td>
+            <td><%= link_to "View", "/contacts/#{contact.id}", method: :get %> </td>
+          </tr>
+        <% end %>
+      </tbody>
+  </table>
 
-<% end %>
+  
+
+</div>
