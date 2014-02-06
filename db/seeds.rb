@@ -19,17 +19,17 @@ contacts << Contact.create(first_name: 'Daniel', last_name: 'Cowley', email: 'Da
 contacts << Contact.create(first_name: 'Taj', last_name: 'Manton', email: 'TajManton@armyspy.com', phone: '770-571-9026', zip: '30071')
 
 ious = []
-ious << Iou.create(balance: 1300.49, name: 'chump change', memo: 'why you steal my lunch money', status: 'open', due_date: '10/19/2014', rec_pay: 'receivable')
-ious << Iou.create(balance: 36619.35, name: 'Bottle Tonx', memo: 'meggings sustainable, polaroid me', status: 'open', due_date: '9/9/2014', rec_pay: 'payable')
-ious << Iou.create(balance: 578.46, name: ' actually. Ho', memo: 'ur-over lo-fi. Shoreditch fanny pack typewrite', status: 'open', due_date: '8/7/2014', rec_pay: 'receivable')
-ious << Iou.create(balance: 4402.99, name: 'odard mumblecore church-ke', memo: 'op-up, blog VHS YOLO disrupt. Selvage drinking vinegar ', status: 'open', due_date: '1/9/2014', rec_pay: 'payable')
-ious << Iou.create(balance: 2162.94, name: 'farm-to-table beard', memo: 'squid gluten-free deep v bitters quinoa', status: 'open', due_date: '3/13/2014', rec_pay: 'receivable')
-ious << Iou.create(balance: 4222.90, name: 'Sriracha', memo: 'a bird on it pug bicycle rights whatever scenester', status: 'open', due_date: '3/30/2014', rec_pay: 'payable')
-ious << Iou.create(balance: 1859.07, name: 'XOXO', memo: 'squid gluten-free deep v bitters quinoa', status: 'open', due_date: '4/9/2014', rec_pay: 'receivable')
-ious << Iou.create(balance: 9872.52, name: 'Bottle Odd Future', memo: ' Godard mumblecore church-key fashion axe hella bitters', status: 'open', due_date: '3/15/2014', rec_pay: 'payable')
-ious << Iou.create(balance: 40942.47, name: 'Vegan gastropub aesthetic,', memo: 'freegan leggings raw denim Echo Park', status: 'open', due_date: '5/24/2014', rec_pay: 'payable')
-ious << Iou.create(balance: 347.73, name: 'Carles gentrify chia', memo: 'PBR&B dreamcatcher vinyl actually cardigan. PBR&B', status: 'open', due_date: '7/31/2014', rec_pay: 'receivable')
-ious << Iou.create(balance: 15.67, name: ' freegan next level ', memo: 'Mixtape cliche American Apparel Tonx chambray, asymmetrical', status: 'open', due_date: '5/19/2014', rec_pay: 'receivable')
+ious << Iou.create(balance: 1300.49, name: 'chump change', memo: 'why you steal my lunch money', status: 'unpaid', due_date: '10/19/2014', rec_pay: 'receivable')
+ious << Iou.create(balance: 36619.35, name: 'Bottle Tonx', memo: 'meggings sustainable, polaroid me', status: 'unpaid', due_date: '9/9/2014', rec_pay: 'payable')
+ious << Iou.create(balance: 578.46, name: ' actually. Ho', memo: 'ur-over lo-fi. Shoreditch fanny pack typewrite', status: 'unpaid', due_date: '8/7/2014', rec_pay: 'receivable')
+ious << Iou.create(balance: 4402.99, name: 'odard mumblecore church-ke', memo: 'op-up, blog VHS YOLO disrupt. Selvage drinking vinegar ', status: 'unpaid', due_date: '1/9/2014', rec_pay: 'payable')
+ious << Iou.create(balance: 2162.94, name: 'farm-to-table beard', memo: 'squid gluten-free deep v bitters quinoa', status: 'unpaid', due_date: '3/13/2014', rec_pay: 'receivable')
+ious << Iou.create(balance: 4222.90, name: 'Sriracha', memo: 'a bird on it pug bicycle rights whatever scenester', status: 'unpaid', due_date: '3/30/2014', rec_pay: 'payable')
+ious << Iou.create(balance: 1859.07, name: 'XOXO', memo: 'squid gluten-free deep v bitters quinoa', status: 'unpaid', due_date: '4/9/2014', rec_pay: 'receivable')
+ious << Iou.create(balance: 9872.52, name: 'Bottle Odd Future', memo: ' Godard mumblecore church-key fashion axe hella bitters', status: 'unpaid', due_date: '3/15/2014', rec_pay: 'payable')
+ious << Iou.create(balance: 40942.47, name: 'Vegan gastropub aesthetic,', memo: 'freegan leggings raw denim Echo Park', status: 'unpaid', due_date: '5/24/2014', rec_pay: 'payable')
+ious << Iou.create(balance: 347.73, name: 'Carles gentrify chia', memo: 'PBR&B dreamcatcher vinyl actually cardigan. PBR&B', status: 'unpaid', due_date: '7/31/2014', rec_pay: 'receivable')
+ious << Iou.create(balance: 15.67, name: ' freegan next level ', memo: 'Mixtape cliche American Apparel Tonx chambray, asymmetrical', status: 'unpaid', due_date: '5/19/2014', rec_pay: 'receivable')
 
 users[0].contacts << contacts[-1]
 users[0].contacts << contacts[-2]

@@ -1,3 +1,4 @@
+<div class="small-8 columns">
 <h1>This IOU</h1>
 
 <table>
@@ -8,6 +9,7 @@
       <th width="100">Amount</th>
       <th width="50">Rec/Pay</th>
       <th width="50">Paid?</th>
+      <th width="50">Edit</th>
     </tr>
   </thead>
     <tbody>
@@ -17,14 +19,17 @@
           <td><%= number_to_currency(@iou.balance) %> </td>
           <td><%= @iou.rec_pay %> </td>
           <td><%= @iou.status %> </td>
+          <td><%= link_to "Edit", "/ious/#{@iou.id}/edit", method: :get %> </td>
         </tr>
     </tbody>
 </table>  
   
-  <% if @iou.status == "Unpaid" %>
-      <%= link_to "Mark paid", "/ious/#{@iou.id}", :status => "Paid", method: :patch, class: "button radius" %>
+  <% if @iou.status == "unpaid" %>
+      <%= link_to "Mark paid", "/ious/#{@iou.id}/status", method: :patch, class: "button radius" %>
     <% else %>
-      <%= link_to "Mark unpaid", "/ious/#{@iou.id}", method: :patch, class: "button radius" %>
+      <%= link_to "Mark unpaid", "/ious/#{@iou.id}/status", method: :patch, class: "button radius" %>
   <% end %>
-  <%= link_to "Delete IOU", ious_path, method: :delete, class: "button radius" %>
+
+  <%= link_to "Delete IOU", "/ious/#{@iou.id}", method: :delete, class: "button radius" %>
   
+</div>

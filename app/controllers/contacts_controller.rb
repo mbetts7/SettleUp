@@ -32,7 +32,7 @@ class ContactsController < ApplicationController
     render :show
   end
 
-  def destory
+  def destroy
     contact = Contact.find(params[:id])
     contact.delete
     redirect_to(ious_path)

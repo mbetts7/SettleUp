@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   def update
   end
 
-  def destory
+  def destroy
   end
 
   def get_contacts

@@ -36,7 +36,18 @@ class IousController < ApplicationController
     render :show
   end
 
-  def destory
+  def status_change
+    @iou = Iou.find(params[:id])
+    if @iou.status == "unpaid"
+      @iou.status = "paid"
+    else
+      @iou.status = "unpaid"
+    end
+    @iou.save
+    redirect_to @iou
+  end
+
+  def destroy
     iou = Iou.find(params[:id])
     iou.delete
     redirect_to(ious_path)

@@ -6,6 +6,8 @@ SettleUp::Application.routes.draw do
 
   resources :users, :contacts, :ious
 
+  patch 'ious/:id/status', to: 'ious#status_change'
+
 end
 
 

@@ -1,6 +1,6 @@
 <h1>Edit your IOU</h1> <br>
 <h3>Your information:</h3><br>
 <%= form_for :iou, url: "/ious/#{:id}" do |f| %>
-    <%= f.text_field :name, placeholder: @ %> 
+    <%= f.text_field :name %> 
     <%= f.submit "Submit Changes" %>
 <% end %>
