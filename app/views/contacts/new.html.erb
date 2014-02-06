@@ -5,10 +5,9 @@
   <%= f.text_field :last_name  %>
   <%= f.label "Email Addresss" %>
   <%= f.text_field :email  %>
-  <%= f.label "Phone number" %>
+  <%= f.label "Phone number (optional)" %>
   <%= f.text_field :phone  %>
-  <%= f.label "Zip code" %>
-  <%= f.text_field :zip  %>
+  
 
-  <%= f.submit "Create IOU" %>  
+  <%= f.submit "Create Contact", class: "button radius" %>  
 <% end %>
