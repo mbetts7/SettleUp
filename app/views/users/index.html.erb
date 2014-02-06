@@ -1,11 +1,11 @@
-<div class="small-6 columns">
+<div class="large-6 columns">
   <h2>Total Due to Me: </h2>
   <h3><%= number_to_currency(@receivable_balance) %></h3>
     <%= render 'receivable_table' %>
 </div>
 
-<div class="small-6 columns">
+<div class="large-6 columns">
 <h2>Total I Owe: </h2>
   <h3><%= number_to_currency(@payable_balance) %></h3>
     <%= render 'payable_table' %>
-</div>
+</div>  
