@@ -2,8 +2,8 @@ class UsersController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @receivable_ious = current_user.ious.where(rec_pay: 'receivable').order('balance DESC', 'name')
-    @payable_ious = current_user.ious.where(rec_pay: 'payable').order('balance DESC', 'name')
+    @receivable_ious = current_user.ious.where(rec_pay: 'receivable').order('created_at DESC','balance DESC', 'name')
+    @payable_ious = current_user.ious.where(rec_pay: 'payable').order('created_at DESC','balance DESC', 'name')
     @payable_balance = current_user.ious.where(rec_pay: 'payable', status: 'unpaid').sum('balance')
     @receivable_balance = current_user.ious.where(rec_pay: 'receivable', status: 'unpaid').sum('balance')
   end

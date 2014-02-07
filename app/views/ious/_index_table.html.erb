@@ -12,7 +12,7 @@
     </tr>
   </thead>
     <tbody>
-      <% @ious.each do |iou| %>
+      <% @ious.order('created_at DESC','balance DESC','name').each do |iou| %>
       <tr>
           <td><%= iou.created_at.strftime("%m/%d/%y") %></td>
           <td><%= iou.contact.first_name + " " + iou.contact.last_name %> </td>
