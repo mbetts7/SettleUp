@@ -40,7 +40,11 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 
 gem 'rails_12factor', group: :production
 
+gem 'foundation-datetimepicker-rails'
+
 ruby "2.0.0"
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+

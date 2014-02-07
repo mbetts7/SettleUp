@@ -9,8 +9,11 @@
     <%= f.label "What's the IOU for?" %>
     <%= f.text_field :name  %>
 
+
     <%= f.label "Due date" %>
-    <%= f.text_field :due_date  %>
+    <!-- <a href="#" class="button small" id="dp4" data-date-format="yyyy-mm-dd" data-date="2012-02-20"> -->
+        <%= f.date_select :due_date  %>
+    <!-- </a> -->
 
     <%= f.label "Payable or Receivable?" %>
     <%= f.select :rec_pay, options_for_select([['payable', 'payable'],['receivable', 'receivable']]) %>
@@ -31,7 +34,7 @@
 
 
 
-    <#%= render partial: "contacts/java" %>
+    <!-- <#%= render partial: "contacts/java" %> -->
 
     <!-- <a href="#" data-reveal-id="myModal" class="button small radius">Create new contact</a> -->
 
