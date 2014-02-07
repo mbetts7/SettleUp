@@ -19,6 +19,12 @@ class IousController < ApplicationController
     @iou = Iou.new(new_iou)
     @iou.user_id = current_user.id
     @iou.save
+    @user = current_user
+
+    # if @iou.save
+
+      IouMailer.new_iou_email(@user).deliver
+    # end
 
     render :show
   end
