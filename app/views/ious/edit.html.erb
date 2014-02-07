@@ -11,7 +11,7 @@
       <%= f.text_field :due_date %>
       
       <%= f.label "Paid or unpaid?" %>
-      <%= f.select :rec_pay, options_for_select([['paid', 'paid'],['unpaid', 'unpaid']]) %>
+      <%= f.select :status, options_for_select([['paid', 'paid'],['unpaid', 'unpaid']]) %>
       
       <%= f.label "Payable or Receivable?" %>
       <%= f.select :rec_pay, options_for_select([['payable', 'payable'],['receivable', 'receivable']]) %>

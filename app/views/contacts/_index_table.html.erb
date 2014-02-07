@@ -1,0 +1,26 @@
+<table>
+    <thead>
+      <tr>
+        <th width="175">Name</th>
+        <th width="200">Email</th>
+        <th width="150">Phone</th>
+        <th width="150">Owed to you</th>
+        <th width="150">You owe them</th>
+        <th width="150">Net owed (in debt)</th>
+        <th width="25">View contact</th>
+      </tr>
+    </thead>
+      <tbody>
+        <% @contacts.each do |contact| %>
+        <tr>
+            <td><%= contact.first_name + " " +   contact.last_name %> </td>
+            <td> <%= contact.email %> </td>
+            <td> <%= contact.phone %> </td>
+            <td> <%= number_to_currency(contact.ious.where(rec_pay: 'receivable', status: 'unpaid').sum('balance')) %> </td>
+            <td> <%= number_to_currency(contact.ious.where(rec_pay: 'payable', status: 'unpaid').sum('balance')) %> </td>
+            <td> <%= number_to_currency(contact.ious.where(rec_pay: 'receivable', status: 'unpaid').sum('balance') - contact.ious.where(rec_pay: 'payable', status: 'unpaid').sum('balance'), negative_format: "(%u%n)") %> </td>
+            <td><%= link_to "View", "/contacts/#{contact.id}", method: :get %> </td>
+          </tr>
+        <% end %>
+      </tbody>
+  </table>

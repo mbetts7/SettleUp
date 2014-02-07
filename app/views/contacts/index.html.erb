@@ -1,33 +1,6 @@
 <div class="small-10 columns">
 <h1>These are your contacts</h1>
 
-    <table>
-    <thead>
-      <tr>
-        <th width="175">Name</th>
-        <th width="200">Email</th>
-        <th width="150">Phone</th>
-        <th width="100">Owes you</th>
-        <th width="100">You owe them</th>
-        <th width="100">Net owed</th>
-        <th width="25">View contact</th>
-      </tr>
-    </thead>
-      <tbody>
-        <% @contacts.each do |contact| %>
-        <tr>
-            <td><%= contact.first_name + " " +   contact.last_name %> </td>
-            <td> <%= contact.email %> </td>
-            <td> <%= contact.phone %> </td>
-            <td> <%= number_to_currency(contact.ious.where(rec_pay: 'receivable', status: 'unpaid').sum('balance')) %> </td>
-            <td> <%= number_to_currency(contact.ious.where(rec_pay: 'payable', status: 'unpaid').sum('balance')) %> </td>
-            <td> net </td>
-            <td><%= link_to "View", "/contacts/#{contact.id}", method: :get %> </td>
-          </tr>
-        <% end %>
-      </tbody>
-  </table>
-
-  
+  <%= render 'index_table' %>
 
 </div>

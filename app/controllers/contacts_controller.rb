@@ -3,8 +3,6 @@ class ContactsController < ApplicationController
   
   def index
     @contacts = current_user.contacts
-    # @receivable_ious = current_user.ious.where(rec_pay: 'payable', status: 'unpaid')
-    
   end
 
   def new
@@ -36,8 +34,9 @@ class ContactsController < ApplicationController
 
   def destroy
     contact = Contact.find(params[:id])
-    contact.delete
-    redirect_to(ious_path)
+    contact.destroy
+    
+    redirect_to(contacts_path)
   end
 
 end

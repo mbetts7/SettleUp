@@ -22,17 +22,18 @@
   </head>
 
   <body>
-  
-    <section>
-      <%= render 'layouts/header' %>
-    </section>
+    <div class="large-12 columns">
+      <section>
+        <%= render 'layouts/header' %>
+      </section>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>  
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>  
 
-    <%= yield %>
+      <%= yield %>
 
-    <%= javascript_include_tag "application" %>
-
+      <%= javascript_include_tag "application" %>
+    </div>
   </body>
+
 </html>

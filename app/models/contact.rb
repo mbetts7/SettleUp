@@ -16,7 +16,7 @@
 #
 
 class Contact < ActiveRecord::Base
-  has_many :ious
+  has_many :ious, dependent: :destroy
   belongs_to :user
   
 

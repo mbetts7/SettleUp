@@ -1,0 +1,14 @@
+<div class="small-8 columns">  
+  
+  <h2> <%= @contact.first_name + " " + @contact.last_name %> </h2>
+    <h4> Email: <%= @contact.email %> </h4>
+    <h4> Phone: <%= @contact.phone %> </h4><br>
+
+    <%= link_to "Edit Contact", "/contacts/#{@contact.id}/edit", method: :get, class: "button radius" %>
+  
+    <%= link_to "View all contacts", "/contacts", method: :get, class: "button radius" %>  
+
+    <br>
+    <%= link_to "Delete Contact and all associated IOUs", "/contacts/#{@contact.id}", method: :delete, class: "button radius" %>
+
+</div>
