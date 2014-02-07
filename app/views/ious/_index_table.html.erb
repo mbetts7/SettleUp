@@ -1,6 +1,7 @@
 <table>
   <thead>
     <tr>
+      <th width="75">Created</th>
       <th width="175">Contact</th>
       <th width="300">Name of IOU</th>
       <th width="100">Amount</th>
@@ -13,6 +14,7 @@
     <tbody>
       <% @ious.each do |iou| %>
       <tr>
+          <td><%= iou.created_at.strftime("%m/%d/%y") %></td>
           <td><%= iou.contact.first_name + " " + iou.contact.last_name %> </td>
           <td><%= iou.name %> </td>
           <td><%= number_to_currency(iou.balance) %> </td>
