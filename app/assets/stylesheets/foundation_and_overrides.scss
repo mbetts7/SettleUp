@@ -1,3 +1,4 @@
+
 //
 // Foundation Variables
 //
@@ -1032,8 +1033,8 @@ $default-float: left;
 // $reveal-border-width: 1px;
 // $reveal-border-color: #666;
 
-// $reveal-modal-class: "reveal-modal";
-// $close-reveal-modal-class: "close-reveal-modal";
+$reveal-modal-class: "reveal-modal";
+$close-reveal-modal-class: "close-reveal-modal";
 
 //
 // Section Variables
@@ -1255,7 +1256,7 @@ $default-float: left;
 
 // Background color for the top bar
 
-// $topbar-bg-color: #111;
+$topbar-bg-color: #30597F ;
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin

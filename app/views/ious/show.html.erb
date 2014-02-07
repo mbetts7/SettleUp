@@ -4,13 +4,13 @@
 <%= render 'show_table' %>
   
   <% if @iou.status == "unpaid" %>
-      <%= link_to "Mark paid", "/ious/#{@iou.id}/status", method: :patch, class: "button radius" %>
+      <%= link_to "Mark paid", "/ious/#{@iou.id}/status", method: :patch, class: "button small radius" %>
     <% else %>
-      <%= link_to "Mark unpaid", "/ious/#{@iou.id}/status", method: :patch, class: "button radius" %>
+      <%= link_to "Mark unpaid", "/ious/#{@iou.id}/status", method: :patch, class: "button small radius" %>
   <% end %>
 
-  <%= link_to "Delete IOU", "/ious/#{@iou.id}", method: :delete, class: "button radius" %>
+  <%= link_to "Delete IOU", "/ious/#{@iou.id}", method: :delete, class: "button small radius" %>
 
-  <%= link_to "View all IOUs", "/ious", method: :get, class: "button radius" %>  
+  <%= link_to "View all IOUs", "/ious", method: :get, class: "button small radius" %>  
   
 </div>

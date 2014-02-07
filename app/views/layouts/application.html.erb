@@ -6,6 +6,9 @@
 <!--[if IE 9 ]>    <html class="ie9" lang="en"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
   <head>
+
+
+
   	<meta charset="utf-8" />
 
   	<!-- Uncomment to make IE8 render like IE7 -->
@@ -19,21 +22,24 @@
   	<%= stylesheet_link_tag    "application" %>
   	<%= javascript_include_tag "vendor/custom.modernizr" %>
     <%= csrf_meta_tags %>
+
   </head>
 
   <body>
-    <div class="large-12 columns">
-      <section>
-        <%= render 'layouts/header' %>
-      </section>
+        <div class="large-12 columns">
+        <section>
+          <%= render 'layouts/header' %>
+        </section>
 
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>  
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>  
 
-      <%= yield %>
+        <%= yield %>
 
-      <%= javascript_include_tag "application" %>
-    </div>
+        <%= javascript_include_tag "application" %>
+
+      </div>
+
   </body>
 
 </html>

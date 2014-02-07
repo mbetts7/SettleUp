@@ -1,5 +1,5 @@
-
-<%= form_for(@contact) do |f| %>
+<div id="myModal" class="reveal-modal" data-reveal>
+<%= form_for @contact do |f| %>
   <%= f.label "First Name" %>
   <%= f.text_field :first_name %>
 
@@ -15,5 +15,6 @@
   <%= f.submit class: "button radius" %>  
 <% end %>
 
-                
-    
+
+<a class="close-reveal-modal">&#215;</a>
+</div>      
