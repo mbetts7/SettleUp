@@ -25,7 +25,7 @@ class IousController < ApplicationController
     # end
 
     redirect_to(@iou)
-      IouMailer.new_iou_email(@user).deliver
+      # IouMailer.new_iou_email(@user).deliver
 
   end
 
