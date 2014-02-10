@@ -23,7 +23,7 @@ class IousController < ApplicationController
 
     # if @iou.save
 
-      IouMailer.new_iou_email(@user).deliver
+      # IouMailer.new_iou_email(@user).deliver
     # end
 
     redirect_to(@iou)
