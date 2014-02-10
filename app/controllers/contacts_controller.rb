@@ -15,7 +15,7 @@ class ContactsController < ApplicationController
     @contact.user_id = current_user.id
     @contact.save
 
-    redirect_to "/contacts"
+    redirect_to(new_iou_path)
   end
 
   def show
@@ -29,7 +29,7 @@ class ContactsController < ApplicationController
   def update
     @contact = Contact.find(params[:id])
     @contact.update_attributes(require(:contact).permit(:first_name, :last_name, :email, :phone))
-    render :show
+    redirect_to(@contact)
   end
 
   def destroy

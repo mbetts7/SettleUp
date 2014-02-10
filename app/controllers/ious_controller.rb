@@ -26,7 +26,7 @@ class IousController < ApplicationController
       IouMailer.new_iou_email(@user).deliver
     # end
 
-    render :show
+    redirect_to(@iou)
   end
 
   def show
@@ -40,7 +40,7 @@ class IousController < ApplicationController
   def update
     @iou = Iou.find(params[:id])
     @iou.update_attributes(params.require(:iou).permit(:balance, :name, :due_date, :status, :rec_pay))
-    redirect_to @iou
+    redirect_to(@iou)
   end
 
   def status_change
