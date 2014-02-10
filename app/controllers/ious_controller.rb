@@ -10,6 +10,7 @@ class IousController < ApplicationController
     @iou = Iou.new
     @iou.build_contact
     @contacts = current_user.contacts
+    @contact = Contact.new()
   end
 
   def create
