@@ -14,7 +14,7 @@ class IousController < ApplicationController
 
   def create
     
-    new_iou = params.require(:iou).permit(:balance, :name, :memo, :status, :due_date, :rec_pay, :contact_id,
+    new_iou = params.requires(:iou).permit(:balance, :name, :memo, :status, :due_date, :rec_pay, :contact_id,
         :contact_attributes => [:first_name, :last_name, :email, :phone, :user_id])
     @iou = Iou.new(new_iou)
     @iou.user_id = current_user.id
@@ -22,11 +22,11 @@ class IousController < ApplicationController
     @user = current_user
 
     # if @iou.save
-
-      # IouMailer.new_iou_email(@user).deliver
     # end
 
     redirect_to(@iou)
+      IouMailer.new_iou_email(@user).deliver
+
   end
 
   def show
