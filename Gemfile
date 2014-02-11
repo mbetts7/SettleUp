@@ -29,7 +29,9 @@ group :development, :test do
   gem 'pry-rails'
   gem 'awesome_print'
   gem 'quiet_assets'
-
+  gem 'guard-rspec' 
+  gem 'guard-livereload'
+  gem 'dotenv-rails'
 end
 
 gem 'devise'
