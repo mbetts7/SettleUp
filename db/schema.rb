@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140204215940) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "contacts", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -26,7 +29,7 @@ ActiveRecord::Schema.define(version: 20140204215940) do
     t.float    "payables"
   end
 
-  add_index "contacts", ["user_id"], name: "index_contacts_on_user_id"
+  add_index "contacts", ["user_id"], name: "index_contacts_on_user_id", using: :btree
 
   create_table "ious", force: true do |t|
     t.float    "balance"
@@ -41,8 +44,8 @@ ActiveRecord::Schema.define(version: 20140204215940) do
     t.string   "rec_pay"
   end
 
-  add_index "ious", ["contact_id"], name: "index_ious_on_contact_id"
-  add_index "ious", ["user_id"], name: "index_ious_on_user_id"
+  add_index "ious", ["contact_id"], name: "index_ious_on_contact_id", using: :btree
+  add_index "ious", ["user_id"], name: "index_ious_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "first_name"
@@ -65,7 +68,7 @@ ActiveRecord::Schema.define(version: 20140204215940) do
     t.float    "payables"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end
