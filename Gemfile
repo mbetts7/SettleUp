@@ -10,10 +10,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 
-gem 'zurb-foundation'
-gem 'newrelic_rpm'
-gem 'foreman'
-
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -24,7 +20,7 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-group :development do
+group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'meta_request'
@@ -33,16 +29,17 @@ group :development do
   gem 'pry-rails'
   gem 'awesome_print'
   gem 'quiet_assets'
+
 end
 
 gem 'devise'
-
-# Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.1.2'
 
 gem 'rails_12factor', group: :production
 
 gem 'foundation-datetimepicker-rails'
+gem 'zurb-foundation'
+gem 'newrelic_rpm'
 
 ruby "2.0.0"
 
