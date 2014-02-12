@@ -17,7 +17,6 @@ end
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta'
-  gem 'better_errors'
   gem 'binding_of_caller'
   gem 'meta_request'
   gem 'pry'
@@ -28,6 +27,10 @@ group :development, :test do
   gem 'guard-rspec' 
   gem 'guard-livereload'
   gem 'dotenv-rails'
+end
+
+group :development do
+  gem 'better_errors'
 end
 
 gem 'devise'
