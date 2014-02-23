@@ -11,8 +11,8 @@
 #  created_at  :datetime
 #  updated_at  :datetime
 #  user_id     :integer
-#  receivables :integer
-#  payables    :integer
+#  receivables :float
+#  payables    :float
 #
 
 class Contact < ActiveRecord::Base

@@ -19,8 +19,8 @@
 #  last_sign_in_at        :datetime
 #  current_sign_in_ip     :string(255)
 #  last_sign_in_ip        :string(255)
-#  receivables            :integer
-#  payables               :integer
+#  receivables            :float
+#  payables               :float
 #
 
 class User < ActiveRecord::Base
